@@ -1,0 +1,39 @@
+
+
+.b1 {
+    margin-top: 20px; 
+}
+
+.header {
+    background-image: url(./glamour-girl-holding-shopping-bags-pucker-lips-looking-coy-standing-against-pink-background.jpg);
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding-top: 45%; 
+   
+}
+
+.content
+{
+    top:50%;
+    
+}
+.poptxt {
+
+    height: 100px;
+    background-color: white;
+    position: relative;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; 
+}
+
+.card-title {
+    position: relative;
+}

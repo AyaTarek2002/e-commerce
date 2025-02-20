@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>🛒Your Products</h2>
+        <div id="cart-items" class="row row-cols-1 row-cols-md-3 g-4"></div>
+        <button id="clear-cart" class="btn btn-danger mt-3">delet all</button>
+    </div>
+
+    <script>
+        let cartItemsContainer = document.getElementById("cart-items");
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function displayCart() {
+            cartItemsContainer.innerHTML = ""; 
+            cart.forEach((product, index) => {
+                let item = `
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="${product.image}" class="card-img-top" alt="${product.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.title}</h5>
+                                <p class="card-text text-success fw-bold">$${product.price}</p>
+                              
+                              <button class="btn btn-danger" onclick="removeFromCart(${index})">delete</button>
+                               <a href="payment.html" class="btn btn-primary">Buy Now</a>
+                              </div>
+                        </div>
+                    </div>`;
+                cartItemsContainer.innerHTML += item;
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        document.getElementById("clear-cart").addEventListener("click", function () {
+            localStorage.removeItem("cart");
+            cart = [];
+            displayCart();
+        });
+
+        displayCart();
+    </script>
+</body>
+</html>
