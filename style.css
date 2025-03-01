@@ -37,3 +37,25 @@
 .card-title {
     position: relative;
 }
+
+.footer {
+    background-color: #232F3E;
+    color: white;
+    padding: 40px 0;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.footer-top {
+    background-color: #37475A;
+    padding: 10px 0;
+    text-align: center;
+}
+.footer-bottom {
+    border-top: 1px solid #3A4553;
+    padding-top: 20px;
+}
